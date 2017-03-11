@@ -1,3 +1,9 @@
+/*Name: Navjot Kaur
+Student ID: 300869349
+File Name: app.js
+Web app name: https://comp308-2017-midterm-300869349.herokuapp.com/*/
+
+
 // modules required for the project
 let express = require('express');
 let path = require('path'); // part of node.js core

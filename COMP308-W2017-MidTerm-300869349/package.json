@@ -1,3 +1,9 @@
+/*
+Name: Navjot Kaur
+Student ID: 300869349
+File Name: package.json
+Web app name: https://comp308-2017-midterm-300869349.herokuapp.com/*/
+
 {
   "name": "comp308-w2017-midterm",
   "version": "0.0.1",
@@ -42,8 +48,5 @@
   ],
   "author": "Tom Tsiliopoulos",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
   "homepage": ""
 }

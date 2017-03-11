@@ -1,3 +1,10 @@
+/*
+Name: Navjot Kaur
+Student ID: 300869349
+File Name: users.js
+Web app name: https://comp308-2017-midterm-300869349.herokuapp.com/
+*/
+
 // require these modules for our user model
 let mongoose = require("mongoose");
 let Schema = mongoose.Schema;

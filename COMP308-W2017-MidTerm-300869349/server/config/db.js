@@ -1,3 +1,10 @@
+/*
+Name: Navjot Kaur
+Student ID: 300869349
+File Name: db.js
+Web app name: https://comp308-2017-midterm-300869349.herokuapp.com/
+*/
+
 module.exports = {
   //local MongoDB deployment ->
   //"URI": "mongodb://localhost/books308"

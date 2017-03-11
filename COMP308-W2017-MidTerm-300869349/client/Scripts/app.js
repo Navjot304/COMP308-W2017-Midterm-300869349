@@ -1,3 +1,10 @@
+/*
+Name: Navjot Kaur
+Student ID: 300869349
+File Name: app.js
+Web app name: https://comp308-2017-midterm-300869349.herokuapp.com/
+*/
+
 /* custom JS goes here */
 
 /* pagination code from http://www.bootply.com/lxa0FF9yhw */
