@@ -12,6 +12,14 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
+// modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+let passportlocal = require('passport-local');
+let LocalStrategy = passportlocal.Strategy;
+let flash = require('connect-flash'); // displays login error messages
+
+
 // import "mongoose" - required for DB Access
 let mongoose = require('mongoose');
 // URI
