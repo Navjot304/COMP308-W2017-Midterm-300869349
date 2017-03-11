@@ -34,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/Navjot304/Comp308-2017-Midterm-300869349.git"
   },
   "keywords": [
     "NodeJS",
@@ -43,5 +43,8 @@
   ],
   "author": "Tom Tsiliopoulos",
   "license": "ISC",
-  "homepage": ""
+  "homepage": "https://github.com/Navjot304/Comp308-2017-Midterm-300869349",
+  "bugs": {
+    "url": "https://github.com/Navjot304/Comp308-2017-Midterm-300869349/issues"
+  }
 }
