@@ -57,7 +57,7 @@ router.get('/login', (req, res, next) => {
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/books',
   failureRedirect: '/login',
-  failureFlash: true
+  failureFlash: 'bad login'
 }));
 
 // GET /register - render the register page
@@ -83,7 +83,6 @@ router.post('/register', (req, res, next) => {
   User.register(
     new User({
         username: req.body.username,
-        //password: req.body.password,
         email: req.body.email,
         displayName: req.body.displayName
       }),
@@ -101,14 +100,14 @@ router.post('/register', (req, res, next) => {
             displayName: req.user ? req.user.displayName : ''
           });
         }
-        // if registration is successful
+        // when registration is done successfully
         return passport.authenticate('local')(req, res, ()=>{
           res.redirect('/books');
         });
       });
 });
 
-// GET /logout - logout the user and redirect to the home page
+// GET /logout - logging out the user and then redirect user to the home page
 router.get('/logout', (req, res, next)=>{
   req.logout();
   res.redirect('/'); // redirect to homepage
