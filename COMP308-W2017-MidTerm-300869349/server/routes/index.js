@@ -30,8 +30,9 @@ function requireAuth(req, res, next) {
 router.get('/', (req, res, next) => {
   res.render('content/index', {
     title: 'Home',
-    displayName: req.user ? req.user.displayName : '',
-    books: ''
+    books: '',
+    displayName: req.user ? req.user.displayName : ''
+    
    });
 });
 
