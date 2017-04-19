@@ -1,4 +1,5 @@
-/*Name: Navjot Kaur
+/*
+Name: Navjot Kaur
 Student ID: 300869349
 File Name: app.js
 Web app name: https://comp308-2017-midterm-300869349.herokuapp.com/*/
@@ -17,7 +18,8 @@ let session = require('express-session');
 let passport = require('passport');
 let passportlocal = require('passport-local');
 let LocalStrategy = passportlocal.Strategy;
-let flash = require('connect-flash'); // displays login error messages
+let flash = require('connect-flash'); // displays errors / login messages
+
 
 
 // import "mongoose" - required for DB Access
@@ -30,7 +32,7 @@ mongoose.connect(process.env.URI || config.URI);
 let db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => {
-  console.log("Conneced to MongoDB...");
+  console.log("Connected to MongoDB...");
 });
 
 // define routers
@@ -52,9 +54,29 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
 
+// setup session
+app.use(session({
+  secret: "COMP308_2017",
+  saveUninitialized: true,
+  resave: true
+}));
+
+// initialize passport and flash
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 // route redirects
 app.use('/', index);
 app.use('/books', books);
+
+// Passport User Configuration
+let UserModel = require('./models/users');
+let User = UserModel.User; // alias for the User Model - User object
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 
 // Handle 404 Errors
